@@ -6,11 +6,11 @@ import { TdAnchorProps, TdAnchorItemProps, TdAnchorTargetProps } from './type';
 
 export const anchorDefaultProps: TdAnchorProps = {
   bounds: 5,
-  container: () => window,
+  container: '() => (() => window)',
   size: 'medium',
   targetOffset: 0,
 };
 
-export const anchorItemDefaultProps: Pick<TdAnchorItemProps, 'target'> = { target: '_self' };
+export const anchorItemDefaultProps: TdAnchorItemProps = { target: '_self' };
 
-export const anchorTargetDefaultProps: Pick<TdAnchorTargetProps, 'tag'> = { tag: 'div' };
+export const anchorTargetDefaultProps: TdAnchorTargetProps = { tag: 'div' };
