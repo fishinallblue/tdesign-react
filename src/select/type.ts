@@ -103,6 +103,7 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
   multiple?: boolean;
   /**
    * 数据化配置选项内容
+   * @default []
    */
   options?: Array<T>;
   /**
@@ -125,6 +126,10 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    * 是否显示下拉框
    */
   popupVisible?: boolean;
+  /**
+   * 是否显示下拉框，非受控属性
+   */
+  defaultPopupVisible?: boolean;
   /**
    * 组件前置图标
    */
@@ -244,6 +249,11 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
 }
 
 export interface TdOptionProps {
+  /**
+   * 当前选项是否为全选，全选可以在顶部，也可以在底部。点击当前选项会选中禁用态除外的全部选项，即使是分组选择器也会选中全部选项
+   * @default false
+   */
+  checkAll?: boolean;
   /**
    * 用于定义复杂的选项内容，同 content
    */

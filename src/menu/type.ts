@@ -14,14 +14,6 @@ export interface TdMenuProps {
    */
   collapsed?: boolean;
   /**
-   * 子菜单展开的导航集合
-   */
-  expanded?: Array<MenuValue>;
-  /**
-   * 子菜单展开的导航集合，非受控属性
-   */
-  defaultExpanded?: Array<MenuValue>;
-  /**
    * 同级别互斥展开
    * @default false
    */
@@ -32,6 +24,16 @@ export interface TdMenuProps {
    */
   expandType?: 'normal' | 'popup';
   /**
+   * 子菜单展开的导航集合
+   * @default []
+   */
+  expanded?: Array<MenuValue>;
+  /**
+   * 子菜单展开的导航集合，非受控属性
+   * @default []
+   */
+  defaultExpanded?: Array<MenuValue>;
+  /**
    * 站点 LOGO
    */
   logo?: TElement;
@@ -40,10 +42,10 @@ export interface TdMenuProps {
    */
   operations?: TElement;
   /**
-   * 菜单风格
+   * 菜单风格，有亮色模式和暗色模式两种。当 `theme = global` 时，模式随整个组件库；当 `theme = system` 时，模式跟随系统。⚠️ `global/system` 正在开发中，暂勿使用
    * @default light
    */
-  theme?: 'light' | 'dark';
+  theme?: 'light' | 'dark' | 'global' | 'system';
   /**
    * 激活菜单项
    */
@@ -69,18 +71,20 @@ export interface TdMenuProps {
 
 export interface TdHeadMenuProps {
   /**
-   * 展开的子菜单集合
-   */
-  expanded?: Array<MenuValue>;
-  /**
-   * 展开的子菜单集合，非受控属性
-   */
-  defaultExpanded?: Array<MenuValue>;
-  /**
    * 二级菜单展开方式，平铺展开和浮层展开
    * @default normal
    */
   expandType?: 'normal' | 'popup';
+  /**
+   * 展开的子菜单集合
+   * @default []
+   */
+  expanded?: Array<MenuValue>;
+  /**
+   * 展开的子菜单集合，非受控属性
+   * @default []
+   */
+  defaultExpanded?: Array<MenuValue>;
   /**
    * 站点 LOGO
    */
