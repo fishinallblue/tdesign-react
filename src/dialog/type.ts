@@ -66,6 +66,11 @@ export interface TdDialogProps {
    */
   footer?: TNode;
   /**
+   * 是否全屏显示弹框
+   * @default false
+   */
+  fullScreen?: boolean;
+  /**
    * 头部内容。值为 true 显示空白头部，值为 false 不显示任何内容，值类型为 string 则直接显示值，值类型为 Function 表示自定义头部内容
    * @default true
    */
@@ -86,7 +91,7 @@ export interface TdDialogProps {
    */
   preventScrollThrough?: boolean;
   /**
-   * 【开发中】仅在挂载元素中显示抽屉，默认在浏览器可视区域显示。父元素需要有定位属性，如：position: relative
+   * 仅在挂载元素中显示抽屉，默认在浏览器可视区域显示。父元素需要有定位属性，如：position: relative
    * @default false
    */
   showInAttachedElement?: boolean;
@@ -172,19 +177,19 @@ export interface DialogInstance {
   /**
    * 销毁弹框
    */
-  destroy: () => void;
+  destroy?: () => void;
   /**
    * 隐藏弹框
    */
-  hide: () => void;
+  hide?: () => void;
   /**
    * 显示弹框
    */
-  show: () => void;
+  show?: () => void;
   /**
    * 更新弹框内容
    */
-  update: (props: DialogOptions) => void;
+  update?: (props: DialogOptions) => void;
 }
 
 export type DialogEventSource = 'esc' | 'close-btn' | 'cancel' | 'overlay';

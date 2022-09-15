@@ -62,7 +62,7 @@ export interface TdUploadProps {
   /**
    * 用于完全自定义文件列表内容
    */
-  fileListDisplay?: TNode<{ files: UploadFile[] }>;
+  fileListDisplay?: TNode<{ displayFiles: UploadFile[] }>;
   /**
    * 已上传文件列表
    * @default []
@@ -147,7 +147,7 @@ export interface TdUploadProps {
    */
   tips?: string;
   /**
-   * 触发上传的元素，`files` 指本次显示的全部文件
+   * 触发上传的元素，`displayFiles` 指本次显示的全部文件
    */
   trigger?: TNode<TriggerContext>;
   /**
@@ -319,7 +319,7 @@ export type SizeUnit = SizeUnitArray[number];
 
 export interface TriggerContext {
   dragActive?: boolean;
-  files: UploadFile[];
+  displayFiles: UploadFile[];
 }
 
 export interface UploadChangeContext {
