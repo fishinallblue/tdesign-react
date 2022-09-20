@@ -22,6 +22,11 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   autoWidth?: boolean;
   /**
+   * 是否有边框
+   * @default true
+   */
+  bordered?: boolean;
+  /**
    * 无边框模式
    * @default false
    */
@@ -238,6 +243,10 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    * 输入值变化时，触发搜索事件。主要用于远程搜索新数据
    */
   onSearch?: (filterWords: string) => void;
+  /**
+   * 下拉框隐藏/显示时触发
+   */
+  onVisibleChange?: (visible: boolean) => void;
 }
 
 export interface TdOptionProps {
